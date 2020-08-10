@@ -282,7 +282,7 @@ The following is a sample URL for adding an activity for a participant.
 
 ``` JSON
 {
-   status: "success"
+   status: "success",
    success: 1
 }
 ```
