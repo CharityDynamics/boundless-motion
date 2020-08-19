@@ -76,7 +76,7 @@ For a given event, retrieve a list of motion activity for top participants and t
 
 #### Parameters
 * `event_id` (required) The ID of the event from which you wish to retrieve participants
-* `roster_type` (required) Possible values include participant and team 
+* `roster_type` (required) Possible values include participant, team, or company
 * `list_size` (required) How many results you wish to retrieve 
 
 #### Sample Participant Roster Call to Staging
@@ -122,8 +122,6 @@ For a given event, retrieve a list of motion activity for top participants and t
 }
 ```
 
-The team roster is the same but with a roster_type of team. The following is a sample URL for demohs:
-
 #### Sample Teams Roster Call to Staging
 `https://load.boundlessfundraising.com/mobiles/demokhs/getMotionActivityRoster?event_id=1234&roster_type=team&list_size=5`
 
@@ -167,6 +165,49 @@ The team roster is the same but with a roster_type of team. The following is a s
 }
 ```
 
+#### Sample Companies Roster Call to Staging
+`https://load.boundlessfundraising.com/mobiles/demokhs/getMotionActivityRoster?event_id=1234&roster_type=company&list_size=5`
+
+#### Sample Companies Roster Response
+
+``` JSON
+{
+   "metric":"steps",
+   "activities":[
+      {
+         "rank":1,
+         "total":"39920",
+         "name":"Acme, Inc.",
+         "id":"1430"
+      },
+      {
+         "rank":2,
+         "total":"299110",
+         "name":"Amalgamated Industries",
+         "id":"1992"
+      },
+      {
+         "rank":3,
+         "total":"190029",
+         "name":"Sprockets USA",
+         "id":"1140"
+      },
+      {
+         "rank":4,
+         "total":"29923",
+         "name":"Innotech",
+         "id":"1002"
+      },
+      {
+         "rank":5,
+         "total":"1089",
+         "name":"Burger World",
+         "id":"1010"
+      }
+   ]
+}
+```
+
 ### getActivitySummary
 New call named getActivitySummary is available with the same authentication, params, etc. as the previous call. The following is a sample call:
 
@@ -177,6 +218,8 @@ For a given event, retrieve a list of motion activity for top participants and t
 * `event_id` (required) The ID of the event for which you wish to retrieve activity summary data
 * `team_id` (required) The ID of the team for which you wish to retrieve activity summary data
 * `user_id` (required) The ID of the participant for which you wish to retrieve activity summary data
+* `company_id` (required) The ID of the company for which you wish to retrieve activity summary data
+
 
 #### Sample Call to Staging for an Event
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=event&event_id=1234`
@@ -192,10 +235,22 @@ Note: Motion does not store an activity goal for events, so only total achieved 
 }
 ```
 
+#### Sample Call to Staging for a Company
+`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=company&event_id=1234&company_id=56789`
+
+#### Sample Response for an Company
+
+``` JSON
+{
+  "metric": "steps",
+  "total": "29910"
+}
+```
+
 #### Sample Call to Staging for a Team
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=team&event_id=1234&team_id=56789`
 
-#### Sample Response for an Event
+#### Sample Response for an Team
 
 ``` JSON
 {
@@ -266,7 +321,7 @@ For a given event, retrieve a list of motion activity for top participants and t
 ```
 
 ### addMotionActivity
-The following is a sample URL for adding an activity for a participant.
+The following is a sample request URL for adding an activity for a participant.
 
 #### Parameters
 * `user_id` (required) Possible values include participant, team, and event 
