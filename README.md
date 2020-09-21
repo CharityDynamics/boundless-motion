@@ -226,7 +226,7 @@ For a given team, retrieve a list of motion activity for participants of that te
 ``` JSON
 {
    "metric":"steps",
-   "activities":[
+   "team_member_list":[
       {
          "user_id": "301111",
          "total": 30402,
