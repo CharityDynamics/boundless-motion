@@ -165,7 +165,7 @@ For a given event, retrieve a list of motion activity for top participants and t
    ]
 }
 ```
-
+<!-- 
 #### Sample Companies Roster Call to Staging
 `https://load.boundlessfundraising.com/mobiles/demokhs/getMotionActivityRoster?event_id=1234&roster_type=company&list_size=5`
 
@@ -207,7 +207,7 @@ For a given event, retrieve a list of motion activity for top participants and t
       }
    ]
 }
-```
+``` -->
 
 
 ### getMotionTeamRoster
@@ -253,7 +253,7 @@ For a given event, retrieve a list of motion activity for top participants and t
 * `event_id` (required) The ID of the event for which you wish to retrieve activity summary data
 * `team_id` (required) The ID of the team for which you wish to retrieve activity summary data
 * `user_id` (required) The ID of the participant for which you wish to retrieve activity summary data
-* `company_id` (required) The ID of the company for which you wish to retrieve activity summary data
+<!-- * `company_id` (required) The ID of the company for which you wish to retrieve activity summary data -->
 
 
 #### Sample Call to Staging for an Program
@@ -283,7 +283,7 @@ Note: Motion does not store an activity goal for events, so only total achieved 
    "total_participants":"11"
 }
 ```
-
+<!-- 
 #### Sample Call to Staging for a Company
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=company&event_id=1234&company_id=56789`
 
@@ -294,7 +294,7 @@ Note: Motion does not store an activity goal for events, so only total achieved 
   "metric": "steps",
   "total": "29910"
 }
-```
+``` -->
 
 #### Sample Call to Staging for a Team
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=team&event_id=1234&team_id=56789`
