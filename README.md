@@ -16,7 +16,8 @@ The Boundless Motion API allows activity data to be displayed outside of the Bou
 * [Methods](#Methods)
    * [getMotionParticipants](#getMotionParticipants)
    * [getMotionActivityRoster](#getMotionActivityRoster)
-   * [getActivitySummary](#getActivitySummary)
+   * [getMotionTeamRoster](#getMotionTeamRoster)
+   * [getMotionActivitySummary](#getMotionActivitySummary)
    * [getMotionParticipantActivities](#getMotionParticipantActivities)
    * [addMotionActivity](#addMotionActivity)
 
@@ -76,7 +77,7 @@ For a given event, retrieve a list of motion activity for top participants and t
 
 #### Parameters
 * `event_id` (required) The ID of the event from which you wish to retrieve participants
-* `roster_type` (required) Possible values include participant, team, or company
+* `roster_type` (required) Possible values include participant or team
 * `list_size` (required) How many results you wish to retrieve 
 
 #### Sample Participant Roster Call to Staging
@@ -208,18 +209,66 @@ For a given event, retrieve a list of motion activity for top participants and t
 }
 ```
 
-### getActivitySummary
-New call named getActivitySummary is available with the same authentication, params, etc. as the previous call. The following is a sample call:
+
+### getMotionTeamRoster
+
+For a given team, retrieve a list of motion activity for participants of that team.
+
+#### Parameters
+* `event_id` (required) The ID of the event from which you wish to retrieve participants
+* `team_id` (required) The ID of the team you wish to retrieve
+
+#### Sample Team Roster Call to Staging
+`https://load.boundlessfundraising.com/mobiles/demokhs/getMotionTeamRoster?event_id=1234&roster_type=team&list_size=5`
+
+#### Sample Teams Roster Response
+
+``` JSON
+{
+   "metric":"steps",
+   "activities":[
+      {
+         "user_id": "301111",
+         "total": 30402,
+         "first_name": "John",
+         "last_name": "Henry"
+      },
+      {
+         "user_id": "399201",
+         "total": 20911,
+         "first_name": "Barbara",
+         "last_name": "Jones"
+      },
+   ]
+}
+```
+
+### getMotionActivitySummary
+New call named getMotionActivitySummary is available with the same authentication, params, etc. as the previous call. The following is a sample call:
 
 For a given event, retrieve a list of motion activity for top participants and teams.
 
 #### Parameters
-* `activity_scope` (required) Possible values include user, team, and event
+* `activity_scope` (required) Possible values include user, team, event and program
 * `event_id` (required) The ID of the event for which you wish to retrieve activity summary data
 * `team_id` (required) The ID of the team for which you wish to retrieve activity summary data
 * `user_id` (required) The ID of the participant for which you wish to retrieve activity summary data
 * `company_id` (required) The ID of the company for which you wish to retrieve activity summary data
 
+
+#### Sample Call to Staging for an Program
+`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=program`
+
+#### Sample Response for an Program
+Note: Program-level activity summary is updated hourly.
+
+``` JSON
+{
+   "goal": "5000",
+   "metric": "distance",
+   "total": "39760.16"
+}
+```
 
 #### Sample Call to Staging for an Event
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=event&event_id=1234`
@@ -277,7 +326,7 @@ Note: Motion does not store an activity goal for events, so only total achieved 
 
 
 ### getMotionParticipantActivities
-New call named getActivitySummary is available with the same authentication, params, etc. as the previous call. The following is a sample call:
+New call named getMotionActivitySummary is available with the same authentication, params, etc. as the previous call. The following is a sample call:
 
 For a given event, retrieve a list of motion activity for top participants and teams.
 
