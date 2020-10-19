@@ -18,7 +18,6 @@ The Boundless Motion API allows activity data to be displayed outside of the Bou
    * [getMotionActivityRoster](#getMotionActivityRoster)
    * [getMotionTeamRoster](#getMotionTeamRoster)
    * [getMotionActivitySummary](#getMotionActivitySummary)
-   * [getMotionParticipantActivities](#getMotionParticipantActivities)
    * [addMotionActivity](#addMotionActivity)
 
 ## Support
@@ -165,50 +164,6 @@ For a given event, retrieve a list of motion activity for top participants and t
    ]
 }
 ```
-<!-- 
-#### Sample Companies Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/demokhs/getMotionActivityRoster?event_id=1234&roster_type=company&list_size=5`
-
-#### Sample Companies Roster Response
-
-``` JSON
-{
-   "metric":"steps",
-   "activities":[
-      {
-         "rank":1,
-         "total":"39920",
-         "name":"Acme, Inc.",
-         "id":"1430"
-      },
-      {
-         "rank":2,
-         "total":"299110",
-         "name":"Amalgamated Industries",
-         "id":"1992"
-      },
-      {
-         "rank":3,
-         "total":"190029",
-         "name":"Sprockets USA",
-         "id":"1140"
-      },
-      {
-         "rank":4,
-         "total":"29923",
-         "name":"Innotech",
-         "id":"1002"
-      },
-      {
-         "rank":5,
-         "total":"1089",
-         "name":"Burger World",
-         "id":"1010"
-      }
-   ]
-}
-``` -->
-
 
 ### getMotionTeamRoster
 
@@ -283,18 +238,6 @@ Note: Motion does not store an activity goal for events, so only total achieved 
    "total_participants":"11"
 }
 ```
-<!-- 
-#### Sample Call to Staging for a Company
-`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=company&event_id=1234&company_id=56789`
-
-#### Sample Response for an Company
-
-``` JSON
-{
-  "metric": "steps",
-  "total": "29910"
-}
-``` -->
 
 #### Sample Call to Staging for a Team
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=team&event_id=1234&team_id=56789`
@@ -321,51 +264,6 @@ Note: Motion does not store an activity goal for events, so only total achieved 
   "total": "14916",
   "goal": "15000",
   "name": "Howard Jones"
-}
-```
-
-
-### getMotionParticipantActivities
-New call named getMotionActivitySummary is available with the same authentication, params, etc. as the previous call. The following is a sample call:
-
-For a given event, retrieve a list of motion activity for top participants and teams.
-
-#### Parameters
-* `event_id` (required) The ID of the event for which you wish to retrieve activity data
-* `user_id` (required) The ID of the participant for which you wish to retrieve activity data
-* `from` (required) Starting date for the results you wish to retrieve, format `YYYY-MM-DD`
-* `to` (required) Ending date for the results you wish to retrieve, format `YYYY-MM-DD`
-
-#### Sample Call to Staging
-`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionParticipantActivities?event_id=1234&user_id=987654&from=2020-04-30&to=2020-07-27`
-
-
-#### Sample Response
-
-``` JSON
-{
-   "type":"run",
-   "metric":"steps",
-   "activity":[
-      {
-         "id":"739",
-         "date":"2020-06-26",
-         "total":"5",
-         "duration":"02:10"
-      },
-      {
-         "id":"724",
-         "date":"2020-06-26",
-         "total":"54",
-         "duration":"18:07"
-      },
-      {
-         "id":"736",
-         "date":"2020-06-24",
-         "total":"500",
-         "duration":"03:03"
-      }
-   ]
 }
 ```
 
