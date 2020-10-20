@@ -75,8 +75,8 @@ For a given event, retrieve a list of user IDs for participants who have connect
 For a given event, retrieve a list of motion activity for top participants and teams.
 
 #### Parameters
-* `event_id` (required) The ID of the event from which you wish to retrieve participants
-* `roster_type` (required) Possible values include participant or team
+* `event_id` (required unless requesting a program roster) The ID of the event from which you wish to retrieve participants
+* `roster_type` (required) Possible values include participant, team, program
 * `list_size` (required) How many results you wish to retrieve 
 
 #### Sample Participant Roster Call to Staging
@@ -123,7 +123,7 @@ For a given event, retrieve a list of motion activity for top participants and t
 ```
 
 #### Sample Teams Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/demokhs/getMotionActivityRoster?event_id=1234&roster_type=team&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionActivityRoster?event_id=1234&roster_type=team&list_size=5`
 
 #### Sample Teams Roster Response
 
@@ -165,6 +165,92 @@ For a given event, retrieve a list of motion activity for top participants and t
 }
 ```
 
+#### Sample Program Roster Call to Staging
+`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionActivityRoster?roster_type=program&list_size=5`
+
+#### Sample Program Roster Response
+``` JSON
+{
+    "metric": "steps",
+    "activities": {
+        "topParticipants": [
+            {
+                "rank": 1,
+                "total": "17770298",
+                "name": "Joyce B.",
+                "id": "2891927",
+                "event_id": "3881"
+            },
+            {
+                "rank": 2,
+                "total": "6851755",
+                "name": "Jessica S.",
+                "id": "399471829",
+                "event_id": "1100"
+            },
+            {
+                "rank": 3,
+                "total": "3541131",
+                "name": "Niasha H.",
+                "id": "2881900",
+                "event_id": "9398"
+            },
+            {
+                "rank": 4,
+                "total": "1738421",
+                "name": "Kenneth B.",
+                "id": "9992772",
+                "event_id": "1992"
+            },
+            {
+                "rank": 5,
+                "total": "1681865",
+                "name": "Joe B.",
+                "id": "2881992",
+                "event_id": "8477"
+            }
+        ],
+        "topTeams": [
+            {
+                "rank": 1,
+                "total": "19336535",
+                "name": "The Not Alone Rangers",
+                "id": "288819",
+                "event_id": "2992"
+            },
+            {
+                "rank": 2,
+                "total": "17770298",
+                "name": "Stewart Family Autos",
+                "id": "581061",
+                "event_id": "1122"
+            },
+            {
+                "rank": 3,
+                "total": "14852366",
+                "name": "St. Francis Hospital",
+                "id": "299910",
+                "event_id": "2983"
+            },
+            {
+                "rank": 4,
+                "total": "12053693",
+                "name": "Alpha Beta",
+                "id": "199271",
+                "event_id": "1112"
+            },
+            {
+                "rank": 5,
+                "total": "12015957",
+                "name": "Main Street Bankers",
+                "id": "229933",
+                "event_id": "2221"
+            }    
+        ]
+    }
+}
+```
+
 ### getMotionTeamRoster
 
 For a given team, retrieve a list of motion activity for participants of that team.
@@ -174,7 +260,7 @@ For a given team, retrieve a list of motion activity for participants of that te
 * `team_id` (required) The ID of the team you wish to retrieve
 
 #### Sample Team Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/demokhs/getMotionTeamRoster?event_id=1234&roster_type=team&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionTeamRoster?event_id=1234&roster_type=team&list_size=5`
 
 #### Sample Teams Roster Response
 
