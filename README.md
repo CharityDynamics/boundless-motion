@@ -14,11 +14,9 @@ The Boundless Motion API allows activity data to be displayed outside of the Bou
    * [Production](#Production-URLs)
 * [Authentication](#Authentication)
 * [Methods](#Methods)
-   * [getMotionParticipants](#getMotionParticipants)
    * [getMotionActivityRoster](#getMotionActivityRoster)
    * [getMotionTeamRoster](#getMotionTeamRoster)
    * [getMotionActivitySummary](#getMotionActivitySummary)
-   * [addMotionActivity](#addMotionActivity)
 
 ## Support
 For API support, please email support@boundlessfundraising.com.
@@ -36,39 +34,6 @@ Boundless Motion APIs can be made to both staging and production environments. T
 Access to the Boundless Motion API is granted by providing your username and password using HTTP basic authentication.  If you have a Boundless Motion contract, you can request a username and password by emailing support@boundlessfundraising.com. All Motion API calls require this authentication to be sent.
 
 ## Methods
-
-### getMotionParticipants
-For a given event, retrieve a list of user IDs for participants who have connected to Boundless Motion.
-
-#### Parameters
-* `event_id` (required) The ID of the event from which you wish to retrieve participants
-* `from` (required) Starting date for the results you wish to retrieve, format `YYYY-MM-DD`
-* `to` (required) Ending date for the results you wish to retrieve, format `YYYY-MM-DD`
-
-#### Sample Call to Staging
-`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionParticipants?event_id=1234&from=2020-04-30&to=2020-07-27`
-
-#### Sample Response
-
-``` JSON
-{
-   "participants":[
-      "1001941",
-      "1001901",
-      "1001846",
-      "1001906",
-      "1001842",
-      "1001910",
-      "1001843",
-      "1001903",
-      "1001841",
-      "1001908",
-      "1001913",
-      "1001685",
-      "1001902"
-   ]
-}
-```
 
 ### getMotionActivityRoster
 
@@ -294,13 +259,12 @@ For a given event, retrieve a list of motion activity for top participants and t
 * `event_id` (required) The ID of the event for which you wish to retrieve activity summary data
 * `team_id` (required) The ID of the team for which you wish to retrieve activity summary data
 * `user_id` (required) The ID of the participant for which you wish to retrieve activity summary data
-<!-- * `company_id` (required) The ID of the company for which you wish to retrieve activity summary data -->
 
 
-#### Sample Call to Staging for an Program
+#### Sample Call to Staging for a Program
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=program`
 
-#### Sample Response for an Program
+#### Sample Response for a Program
 Note: Program-level activity summary is updated hourly.
 
 ``` JSON
@@ -328,7 +292,7 @@ Note: Motion does not store an activity goal for events, so only total achieved 
 #### Sample Call to Staging for a Team
 `https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivitySummary?activity_scope=team&event_id=1234&team_id=56789`
 
-#### Sample Response for an Team
+#### Sample Response for a Team
 
 ``` JSON
 {
@@ -350,27 +314,5 @@ Note: Motion does not store an activity goal for events, so only total achieved 
   "total": "14916",
   "goal": "15000",
   "name": "Howard Jones"
-}
-```
-
-### addMotionActivity
-The following is a sample request URL for adding an activity for a participant.
-
-#### Parameters
-* `user_id` (required) Possible values include participant, team, and event 
-* `event_id` (required) The ID of the event for which you wish to retrieve activity summary data
-* `date` (required) The date of the activity `YYYY-MM-DD`
-* `amount` (required) The amount of the activity achieved
-* `duration` (required) The duration of the activity `HH:MM`
-
-#### Sample Call to Staging
-`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/addMotionActivity?user_id=987654&event_id={eventId}&date=2020-06-26&amount=5&duration=2:10`
-
-#### Sample Response
-
-``` JSON
-{
-   status: "success",
-   success: 1
 }
 ```
