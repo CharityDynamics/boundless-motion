@@ -88,7 +88,7 @@ For a given event, retrieve a list of motion activity for top participants and t
 ```
 
 #### Sample Teams Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionActivityRoster?event_id=1234&roster_type=team&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionActivityRoster?event_id=1234&team_id=5678&roster_type=team&list_size=5`
 
 #### Sample Teams Roster Response
 
