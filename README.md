@@ -51,166 +51,205 @@ For a given event, retrieve a list of motion activity for top participants and t
 
 ``` JSON
 {
-   "metric":"steps",
+   "metric":"distance",
    "activities":[
-      {
-         "rank":1,
-         "total":"95000",
-         "name":"Karl M.",
-         "id":"2120"
-      },
-      {
-         "rank":2,
-         "total":"90000",
-         "name":"Rachel A.",
-         "id":"1005402"
-      },
-      {
-         "rank":3,
-         "total":"55000",
-         "name":"Abraham L.",
-         "id":"1014422"
-      },
-      {
-         "rank":4,
-         "total":"35000",
-         "name":"Jon F.",
-         "id":"1014423"
-      },
-      {
-         "rank":5,
-         "total":"15000",
-         "name":"Sarah T.",
-         "id":"1014322"
-      }
+        {
+            "rank": 1,
+            "total": 15196.3,
+            "name": "Oliver J.",
+            "id": "1001841",
+            "event_id": "1061",
+            "duration": "3288"
+        },
+        {
+            "rank": 2,
+            "total": 128.76,
+            "name": "Ben T.",
+            "id": "1001962",
+            "event_id": "1061",
+            "duration": "0"
+        },
+        {
+            "rank": 3,
+            "total": 105.49,
+            "name": "Ben T.",
+            "id": "1001963",
+            "event_id": "1061",
+            "duration": "0"
+        },
+        {
+            "rank": 4,
+            "total": 57.21,
+            "name": "David P.",
+            "id": "1002163",
+            "event_id": "1061",
+            "duration": "684"
+        },
+        {
+            "rank": 5,
+            "total": 41.49,
+            "name": "Byrony Z.",
+            "id": "1001685",
+            "event_id": "1061",
+            "duration": "1452"
+        }
    ]
 }
 ```
 
 #### Sample Teams Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionActivityRoster?event_id=1234&roster_type=team&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivityRoster?event_id=1234&roster_type=team&list_size=5`
 
 #### Sample Teams Roster Response
 
 ``` JSON
 {
-   "metric":"steps",
-   "activities":[
-      {
-         "rank":1,
-         "total":"365422",
-         "name":"Leah's Friends",
-         "id":"1470"
-      },
-      {
-         "rank":2,
-         "total":"301111",
-         "name":"Team Work",
-         "id":"1410"
-      },
-      {
-         "rank":3,
-         "total":"101111",
-         "name":"Johnna Team",
-         "id":"1330"
-      },
-      {
-         "rank":4,
-         "total":"99213",
-         "name":"Franks Team",
-         "id":"1500"
-      },
-      {
-         "rank":5,
-         "total":"99213",
-         "name":"Step It Up",
-         "id":"1500"
-      }
-   ]
+    "metric": "distance",
+    "team_member_list": [
+        {
+            "duration": "3288",
+            "user_id": "1001841",
+            "total": 15196.3,
+            "first_name": "Oliver",
+            "last_name": "James"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001843",
+            "total": 6.41,
+            "first_name": "Liam",
+            "last_name": "Potter"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001911",
+            "total": 0,
+            "first_name": "Diego",
+            "last_name": "Muoz"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001844",
+            "total": 0,
+            "first_name": "Ethan",
+            "last_name": "Lilly"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001908",
+            "total": 0,
+            "first_name": "Oliva",
+            "last_name": "Pope"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001842",
+            "total": 0,
+            "first_name": "Sansa",
+            "last_name": "James"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001910",
+            "total": 0,
+            "first_name": "Thomas",
+            "last_name": "Fitzgerald"
+        }
+    ]
 }
 ```
 
 #### Sample Program Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionActivityRoster?roster_type=program&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivityRoster?roster_type=program&list_size=5`
 
 #### Sample Program Roster Response
 ``` JSON
 {
-    "metric": "steps",
+    "metric": "miles",
     "activities": {
         "topParticipants": [
             {
                 "rank": 1,
-                "total": "17770298",
-                "name": "Joyce B.",
-                "id": "2891927",
-                "event_id": "3881"
+                "total": 15196.3,
+                "name": "Oliver J.",
+                "id": "1001841",
+                "event_id": "1061",
+                "duration": "3288"
             },
             {
                 "rank": 2,
-                "total": "6851755",
-                "name": "Jessica S.",
-                "id": "399471829",
-                "event_id": "1100"
+                "total": 128.76,
+                "name": "Ben T.",
+                "id": "1001962",
+                "event_id": "1061",
+                "duration": "0"
             },
             {
                 "rank": 3,
-                "total": "3541131",
-                "name": "Niasha H.",
-                "id": "2881900",
-                "event_id": "9398"
+                "total": 105.49,
+                "name": "Ben T.",
+                "id": "1001963",
+                "event_id": "1061",
+                "duration": "0"
             },
             {
                 "rank": 4,
-                "total": "1738421",
-                "name": "Kenneth B.",
-                "id": "9992772",
-                "event_id": "1992"
+                "total": 57.21,
+                "name": "David P.",
+                "id": "1002163",
+                "event_id": "1061",
+                "duration": "684"
             },
             {
                 "rank": 5,
-                "total": "1681865",
-                "name": "Joe B.",
-                "id": "2881992",
-                "event_id": "8477"
+                "total": 41.49,
+                "name": "Byrony Z.",
+                "id": "1001685",
+                "event_id": "1061",
+                "duration": "1452"
             }
         ],
         "topTeams": [
             {
                 "rank": 1,
-                "total": "19336535",
-                "name": "The Not Alone Rangers",
-                "id": "288819",
-                "event_id": "2992"
+                "total": 15202.7,
+                "name": "Boundless",
+                "id": "1040",
+                "event_id": "1061",
+                "duration": "3288"
             },
             {
                 "rank": 2,
-                "total": "17770298",
-                "name": "Stewart Family Autos",
-                "id": "581061",
-                "event_id": "1122"
+                "total": 113.23,
+                "name": "Bens Test Team",
+                "id": "1080",
+                "event_id": "1061",
+                "duration": "0"
             },
             {
                 "rank": 3,
-                "total": "14852366",
-                "name": "St. Francis Hospital",
-                "id": "299910",
-                "event_id": "2983"
+                "total": 57.21,
+                "name": "Awesome Sauce 2",
+                "id": "1121",
+                "event_id": "1061",
+                "duration": "684"
             },
             {
                 "rank": 4,
-                "total": "12053693",
-                "name": "Alpha Beta",
-                "id": "199271",
-                "event_id": "1112"
+                "total": 50,
+                "name": "Charity Dynamics UX",
+                "id": "1050",
+                "event_id": "1061",
+                "duration": "0"
             },
             {
                 "rank": 5,
-                "total": "12015957",
-                "name": "Main Street Bankers",
-                "id": "229933",
-                "event_id": "2221"
-            }    
+                "total": 41.49,
+                "name": "Team Work 2",
+                "id": "1021",
+                "event_id": "1061",
+                "duration": "1452"
+            }
         ]
     }
 }
@@ -225,27 +264,64 @@ For a given team, retrieve a list of motion activity for participants of that te
 * `team_id` (required) The ID of the team you wish to retrieve
 
 #### Sample Team Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/democdsb/getMotionTeamRoster?event_id=1234&roster_type=team&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionTeamRoster?event_id=1234&roster_type=team&list_size=5`
 
 #### Sample Teams Roster Response
 
 ``` JSON
 {
-   "metric":"steps",
-   "team_member_list":[
-      {
-         "user_id": "301111",
-         "total": 30402,
-         "first_name": "John",
-         "last_name": "Henry"
-      },
-      {
-         "user_id": "399201",
-         "total": 20911,
-         "first_name": "Barbara",
-         "last_name": "Jones"
-      },
-   ]
+    "metric": "distance",
+    "team_member_list": [
+        {
+            "duration": "3288",
+            "user_id": "1001841",
+            "total": 15196.3,
+            "first_name": "Oliver",
+            "last_name": "James"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001843",
+            "total": 6.41,
+            "first_name": "Liam",
+            "last_name": "Potter"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001911",
+            "total": 0,
+            "first_name": "Diego",
+            "last_name": "Muoz"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001844",
+            "total": 0,
+            "first_name": "Ethan",
+            "last_name": "Lilly"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001908",
+            "total": 0,
+            "first_name": "Oliva",
+            "last_name": "Pope"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001842",
+            "total": 0,
+            "first_name": "Sansa",
+            "last_name": "James"
+        },
+        {
+            "duration": "0",
+            "user_id": "1001910",
+            "total": 0,
+            "first_name": "Thomas",
+            "last_name": "Fitzgerald"
+        }
+    ]
 }
 ```
 
@@ -283,9 +359,10 @@ Note: Motion does not store an activity goal for events, so only total achieved 
 
 ``` JSON
 {
-   "metric":"steps",
-   "total":"141957",
-   "total_participants":"11"
+    "duration": "7877",
+    "metric": "distance",
+    "total": "15654.75",
+    "total_participants": "49"
 }
 ```
 
@@ -296,9 +373,10 @@ Note: Motion does not store an activity goal for events, so only total achieved 
 
 ``` JSON
 {
-  "metric": "steps",
-  "total": "51756",
-  "goal": "60000"
+    "duration": "3",
+    "metric": "distance",
+    "total": "0.35",
+    "goal": "1000"
 }
 ```
 
@@ -310,9 +388,10 @@ Note: Motion does not store an activity goal for events, so only total achieved 
 
 ``` JSON
 {
-  "metric": "steps",
-  "total": "14916",
-  "goal": "15000",
-  "name": "Howard Jones"
+    "duration": "1452",
+    "metric": "distance",
+    "total": "41.48",
+    "goal": "50",
+    "name": "Byrony Zeigler"
 }
 ```
