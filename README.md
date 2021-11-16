@@ -43,9 +43,10 @@ For a given event, retrieve a list of motion activity for top participants and t
 * `event_id` (required unless requesting a program roster) The ID of the event from which you wish to retrieve participants
 * `roster_type` (required) Possible values include participant, team, program
 * `list_size` (required) How many results you wish to retrieve 
+* `participation_type` (optional) Filter results to only include participants of a paticualr type. Valid types are `Walk`, `Run`, `Rider`,`Ironman`, and `Other`
 
 #### Sample Participant Roster Call to Staging
-`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivityRoster?event_id=1234&roster_type=participant&list_size=5`
+`https://load.boundlessfundraising.com/mobiles/{boundlessDB}/getMotionActivityRoster?event_id=1234&roster_type=participant&list_size=5&participation_type=Walk`
 
 #### Sample Participant Roster Response
 
